@@ -1,0 +1,12 @@
+<td>
+    <div class="custom-control custom-radio radio-primary">
+        <input type="radio" id="rdo_{{$key}}_pre" name="rdo[{{$s->id}}]" class="custom-control-input" value="present" checked>
+        <label class="custom-control-label" for="rdo_{{$key}}_pre">Present</label>
+    </div>
+    <div class="custom-control custom-radio radio-pink">
+        <input type="radio" id="rdo_{{$key}}_abs" name="rdo[{{$s->id}}]" class="custom-control-input" value="absent">
+        <label class="custom-control-label" for="rdo_{{$key}}_abs">Absent</label>
+    </div>
+</td>
+
+{{-- Care about people's approval and you will be their prisoner. --}}
