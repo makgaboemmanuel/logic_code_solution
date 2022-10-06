@@ -7,7 +7,6 @@ git clone https://github.com/makgaboemmanuel/logic_code_solution.git
 
 composer create-project --prefer-dist laravel/laravel code_logic_solution "8.*"
 
-#NB: you can import the Database file found in the reposiroty, the filename: logic_code_solution.sql
 Tables To Be Created:
 	user - default [ please add the field: role - this is going to be used to identiry the type of a user ]
 	ticket

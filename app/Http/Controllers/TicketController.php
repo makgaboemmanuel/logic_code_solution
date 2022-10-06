@@ -37,7 +37,7 @@ class TicketController extends Controller
 
             $ticket->save();
 
-            Mail::to('gudlukmme@gmail.com')->send(new SendTicketMail($ticket));
+            Mail::to( $ticket->user->email)->send(new SendTicketMail($ticket));
         } catch (Exception $exception) {
             return response([
                 "code" => 409,
@@ -45,8 +45,9 @@ class TicketController extends Controller
             ]);
         }
 
-        /* redirecting to home page */
-        return view('welcome');
+
+        return redirect()->route('welcome')->with('message','Ticket successfully logged, please check your email');
+
     }
 
     public function searchtickets(Request $request)
@@ -73,7 +74,7 @@ class TicketController extends Controller
         $ticket->save();
 
         $tickets = Ticket::paginate(10);
-        return Redirect::to('/searchtickets')->with(['tickets' => $tickets]);
+        return Redirect::to('admin/searchtickets')->with(['tickets' => $tickets]);
     }
 
     public function ajax_data(Request $request)

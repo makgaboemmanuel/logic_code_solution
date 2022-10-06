@@ -1,54 +1,64 @@
 @extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <title>File Processing</title>
 </head>
 
-<body class="antialiased">
-    @section('content')
-        <div class="container mt-8">
-            <div class="form">
-                <form class="form row" action="" method="">
-                    @csrf
 
-                    @if ($errors->count())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
+@section('content')
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card justify-content-center" style="max-width: 80%;">
+                <div class="card-header">The Present Complex Query Data </div>
+                <div class="card-body">
+                    <form action="/getpeopledata" method="post">
+                        @csrf
+
+                        @if ($errors->count())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
+
+                        <table class="table table-striped w-auto">
+                            <thead> </thead>
+                            <th> Firstname </th>
+                            <th> Lastname </th>
+                            <th>Gender </th>
+                            <th>Nationality </th>
+                            <th>Interest </th>
+                            </thead>
+
+                            <tbody>
+
+                                @foreach ($animallovers as $animallover)
+                                    <tr class="table-info">
+                                        <th scope="col"> {{ $animallover->personal_detail->firstname }} </th>
+                                        <th scope="col"> {{ $animallover->personal_detail->lastname }} </th>
+                                        <th scope="col"> {{ $animallover->personal_detail->gender }} </th>
+                                        <th scope="col"> {{ $animallover->personal_detail->nationality }} </th>
+                                        <th scope="col"> {{ $animallover->name }} </th>
+                                    </tr>
                                 @endforeach
-                            </ul>
+
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex justify-content-center">
+                            {!! $animallovers->links() !!}
                         </div>
-                    @endif
 
-                    <table>
-                        <thead> </thead>
-                        <th> Firstname </th>
-                        <th> Lastname </th>
-                        <th>Gender </th>
-                        <th>Nationality </th>
-                        </thead>
+                    </form>
 
-                        <tbody>
-
-
-                            @foreach ($animallovers as $animallover)
-                                {
-                                <tr>
-                                    <th scope="col"> {{ $animallover->people_detail->firstname}} </th>
-                                    <th scope="col"> {{ $animallover->people_detail->lastname}}  </th>
-                                    <th scope="col"> {{ $animallover->people_detail->gender}}  </th>
-                                    <th scope="col"> {{ $animallover->people_detail->nationality}}  </th>
-                                </tr>
-                                }
-                            @endforeach
-
-                        </tbody>
-                    </table>
-                </form>
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+    </div>
+@endsection

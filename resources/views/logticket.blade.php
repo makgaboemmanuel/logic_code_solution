@@ -18,8 +18,8 @@
                                 @csrf
                                 <div class="card-header">Please Provide Information About The Ticket</div>
                                 <div class="card-body">
+                                    <br>
 
-                                    <!-- user added code -->
                                     <div>
                                         <table>
                                             <tbody>
@@ -28,8 +28,8 @@
                                                 </tr>
                                                 <tr>
                                                     <th class="float-right">
-                                                        <select class="browser-default custom-select" id="category"
-                                                            name="category" required="true">
+                                                        <select class="form-select form-select form-select-lg"
+                                                            id="category" name="category" required="true">
                                                             <option value="Sales">Sales</option>
                                                             <option value="Accounts">Accounts</option>
                                                             <option value="IT">IT</option>
@@ -45,6 +45,8 @@
                                     <!-- user added code -->
 
                                     <!-- Message input -->
+                                    <br>
+                                    <br>
                                     <div class="form-outline mb-4">
                                         <textarea class="form-control" id="message" name="message" rows="4" required="true"></textarea>
                                         <label class="form-label" for="form4Example3">Message</label>

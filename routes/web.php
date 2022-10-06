@@ -23,6 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+
 /* User Controller */
 Route::post('/registeruser', [UserController::class, 'registeruser']);
 
@@ -40,9 +41,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('/getticket/{id}', [TicketController::class, 'getticket']);
 
-    Route::post('/updateaticket', [TicketController::class, 'updateaticket']);
 });
 
+Route::post('/updateaticket', [TicketController::class, 'updateaticket']);
 
 
 
@@ -54,6 +55,10 @@ Route::post('/sorttickets', [TicketController::class, 'sorttickets']);
 
 
 /* 2nd question */
+/* Route::get('/getpeople', function(){
+    return view('getpeople');
+})->name('getpeople'); */
+
 Route::post('/getpeopledata', [QueryController::class, 'getpeopledata']);
 
 Route::get('/complex_query', [FileManipulationController::class, 'complex_query']);

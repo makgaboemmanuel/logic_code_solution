@@ -37,6 +37,15 @@
 
                                 </tr>
                             </table>
+
+                            {{-- @if ($animallovers)
+                                @foreach ($animallovers as $animallover)
+                                    {{ $animallover->name }}
+                                @endforeach
+                            @endif --}}
+
+
+
                         </form>
                     </div>
                 </div>

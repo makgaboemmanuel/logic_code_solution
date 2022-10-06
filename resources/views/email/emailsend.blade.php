@@ -26,7 +26,7 @@
     </tr>
     <tr>
         <td>Ticket URl</td>
-        <td>{{ 'http://127.0.0.1:8001/getticket/' . $ticket->id }}</td>
+        <td>{{ 'http://127.0.0.1:8001/admin/getticket/' . $ticket->id }}</td>
     </tr>
 
 </table>

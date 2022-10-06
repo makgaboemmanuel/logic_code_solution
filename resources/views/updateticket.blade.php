@@ -28,7 +28,7 @@
                                             <th scope="col">Ticket ID</th>
                                             <th scope="col"> {{ $ticket->id }}</th>
                                             <th scope="col" value="ticket_id">
-                                                <input type="text" disbaled="true" readonly="true"
+                                                <input type="text" class="form-control" disbaled="true" readonly="true"
                                                     value="{{ $ticket->id }}" id="id" name="id" />
                                             </th>
                                         </tr>
@@ -37,7 +37,7 @@
                                         <th scope="col"> {{ $ticket->category }}</th>
                                         <th scope="col">
                                             <div>
-                                                <select class="browser-default custom-select" id="category" name="category"
+                                                <select class="form-select" id="category" name="category"
                                                     required="true">
                                                     <option value="Sales">Sales</option>
                                                     <option value="Accounts">Accounts</option>
@@ -51,7 +51,7 @@
                                             <th scope="col"> {{ $ticket->status }}</th>
                                             <th scope="col">
                                                 <div>
-                                                    <select class="browser-default custom-select" id="status"
+                                                    <select class="form-select" id="status"
                                                         name="status" required="true">
                                                         <option value="Progress">Progress</option>
                                                         <option value="Resolved">Resolved</option>
