@@ -64,7 +64,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <button type="submit" class="btn btn-primary btn-block mb-4">Update Ticket
+                                            <button type="submit" class="btn btn-primary btn-block mb-4" disabled>Update Ticket
                                                 Details
                                             </button>
                                         </tr>
