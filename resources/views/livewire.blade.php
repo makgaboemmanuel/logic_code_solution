@@ -30,7 +30,7 @@
             <div class="col-md-8">
                 <div class="panel panel-default well">
                     <div class="panel-body">
-                        <form action="/searchtickets" method="get">
+                        <form action="/admin/searchtickets" method="get">
 
                             <table class="table table-hover table-bordered">
                                 <thead>

@@ -97,3 +97,22 @@ composer require laravel/ui
 php artisan ui:auth 
 
 
+registered username: 
+
+email: frankeinstein_gemini@gmail.com
+password: frankeinstein_
+
+email: frankeinstein_geminis@gmail.com
+password: frankeinstein_
+
+email: thomas_franklin@gmail.com
+password: thomas_franklin
+
+cleaning cache 
+
+
+php artisan cache:clear
+php artisan route:cache
+
+
+
