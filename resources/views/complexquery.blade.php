@@ -16,6 +16,7 @@
                 <div class="card justify-content-center" style="max-width: 80%;">
                     <div class="card-header">The Present Complex Query Data </div>
                     <div class="card-body">
+                        <a href="getpeopledata/"> Test Different Link Per Category </a>
                         <form action="/getpeopledata" method="post">
                             @csrf
                             <table>

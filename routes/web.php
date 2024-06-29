@@ -62,6 +62,11 @@ Route::post('/sorttickets', [TicketController::class, 'sorttickets']);
 
 Route::post('/getpeopledata', [QueryController::class, 'getpeopledata']);
 
+# duplicate with different: post vs get
+Route::get('/getpeople', [QueryController::class, 'getpeople']);
+# getchildren
+Route::get('/getchildren', [QueryController::class, 'getchildren']);
+
 Route::get('/complex_query', [FileManipulationController::class, 'complex_query']);
 
 Route::get('/animalovers', [QueryController::class, 'animalovers']);

@@ -7,13 +7,28 @@ use App\Models\PersonalDetail;
 use App\Models\Interest;
 use App\Models\Document;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Log;
 
 class QueryController extends Controller
 {
 
     public function getpeopledata(Request $request){
+        // return redirect('admin/searchtickets'); getpeople
         if($request->input('animallovers')){
-            $animallovers = Interest::where('name','Children')->orWhere('name','Sport')->paginate(10);
+
+            return redirect('/getpeople'); // getpeople
+        }
+
+        if( $request->input('childrenandsport')){
+
+            return redirect('/getchildren'); // getpeople
+        }
+        // self::getpeople();
+        # $this->getpeople(); /* calling a local method */
+        if($request->input('animallovers')){
+            $animallovers = Interest::where('name','Children')->orWhere('name','Sport')->paginate(3);
+
+            # please change this to a get route and not a post route
 
             // $request->session()->save();
             //return redirect()->route('getpeople', compact('animallovers')); //->with(['animallovers' => $animallovers]);
@@ -23,9 +38,19 @@ class QueryController extends Controller
         }else{
             return back()->withErrors(['errors' => ['The Implementation Not Yet Build']]);
         }
-
     }
 
+    public function getpeople(){
+        $animallovers = Interest::where('name','Children')->orWhere('name','Sport')->paginate(3);
+        Log::warning('objejct returned', $animallovers->toArray());
+        return view('getpeople', compact('animallovers'))->render();
+    }
+
+    public function getchildren(){
+        $animallovers = Interest::where('name','Volunteering')->orWhere('name','Video gaming')->paginate(6);
+        Log::warning('objejct returned', $animallovers->toArray());
+        return view('getpeople', compact('animallovers'))->render();
+    }
 
     public function animalovers(){
         $animalLovers = Interest::where('name','Animals')->get();

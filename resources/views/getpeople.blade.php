@@ -12,7 +12,7 @@
             <div class="card justify-content-center" style="max-width: 80%;">
                 <div class="card-header">The Present Complex Query Data </div>
                 <div class="card-body">
-                    <form action="/getpeopledata" method="post">
+                    <form action="/getpeopledata" method="get">
                         @csrf
 
                         @if ($errors->count())
@@ -37,16 +37,29 @@
 
                             <tbody>
 
-                                @foreach ($animallovers as $animallover)
-                                    <tr class="table-info">
-                                        <th scope="col"> {{ $animallover->personal_detail->firstname }} </th>
-                                        <th scope="col"> {{ $animallover->personal_detail->lastname }} </th>
-                                        <th scope="col"> {{ $animallover->personal_detail->gender }} </th>
-                                        <th scope="col"> {{ $animallover->personal_detail->nationality }} </th>
-                                        <th scope="col"> {{ $animallover->name }} </th>
-                                    </tr>
-                                @endforeach
+                                @if( isset($animallovers))
+                                    @foreach ($animallovers as $animallover)
+                                        <tr class="table-info">
+                                            <th scope="col"> {{ $animallover->personal_detail->firstname }} </th>
+                                            <th scope="col"> {{ $animallover->personal_detail->lastname }} </th>
+                                            <th scope="col"> {{ $animallover->personal_detail->gender }} </th>
+                                            <th scope="col"> {{ $animallover->personal_detail->nationality }} </th>
+                                            <th scope="col"> {{ $animallover->name }} </th>
+                                        </tr>
+                                    @endforeach
+                                @endif
 
+                                @if( isset($volunteers))
+                                    @foreach ($volunteers as $volunteer)
+                                        <tr class="table-info">
+                                            <th scope="col"> {{ $volunteer->personal_detail->firstname }} </th>
+                                            <th scope="col"> {{ $volunteer->personal_detail->lastname }} </th>
+                                            <th scope="col"> {{ $volunteer->personal_detail->gender }} </th>
+                                            <th scope="col"> {{ $volunteer->personal_detail->nationality }} </th>
+                                            <th scope="col"> {{ $volunteer->name }} </th>
+                                        </tr>
+                                    @endforeach
+                                @endif
                             </tbody>
                         </table>
 

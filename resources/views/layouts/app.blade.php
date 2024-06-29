@@ -27,18 +27,17 @@
         type='text/css'>
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstra‌p.min.css"></script>
-    
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap‌.min.js"></script>
 
 </head>
 
 <body>
-    <?php echo "Emmanuel" ?>
-    {{ Auth::user()->firstname }}
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -120,6 +119,10 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/file_manipulation">File Manipulation</a>
+                            </li>
+                            <!-- newly added code -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.semrush.com/">Semrush</a>
                             </li>
 
                         </ul>
