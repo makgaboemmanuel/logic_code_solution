@@ -23,6 +23,18 @@ class QueryController extends Controller
 
             return redirect('/getchildren'); // getpeople
         }
+        # execution for: uniqueinterests
+        if( $request->input('uniqueinterests')){
+
+            return redirect('/uniqueinterests'); // getpeople
+        }
+
+        # execution for: uniqueinterests
+        if( $request->input('interestspeople')){
+
+            return redirect('/interestspeople'); // getpeople
+        }
+
         // self::getpeople();
         # $this->getpeople(); /* calling a local method */
         if($request->input('animallovers')){
@@ -48,7 +60,23 @@ class QueryController extends Controller
 
     public function getchildren(){
         $animallovers = Interest::where('name','Volunteering')->orWhere('name','Video gaming')->paginate(6);
-        Log::warning('objejct returned', $animallovers->toArray());
+        // Log::warning('objejct returned', $animallovers->toArray());
+        return view('getpeople', compact('animallovers'))->render();
+    }
+
+    public function uniqueinterests(){
+        $animallovers = Interest::where('name','History')
+                                  ->orWhere('name','Dancing')
+                                  ->orWhere('name','Farming')
+                                  ->paginate(8);
+        // Log::warning('objejct returned', $animallovers->toArray());
+        return view('getpeople', compact('animallovers'))->render();
+    }
+
+    # interestspeople
+    public function interestspeople(){
+        $animallovers = Interest::where('name','Blogging')->orWhere('name','Learning new languages')->paginate(5);
+        // Log::warning('objejct returned', $animallovers->toArray());
         return view('getpeople', compact('animallovers'))->render();
     }
 

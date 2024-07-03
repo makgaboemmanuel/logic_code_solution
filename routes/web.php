@@ -66,6 +66,10 @@ Route::post('/getpeopledata', [QueryController::class, 'getpeopledata']);
 Route::get('/getpeople', [QueryController::class, 'getpeople']);
 # getchildren
 Route::get('/getchildren', [QueryController::class, 'getchildren']);
+# uniqueinterests
+Route::get('/uniqueinterests', [QueryController::class, 'uniqueinterests']);
+# interestspeople
+Route::get('/interestspeople', [QueryController::class, 'interestspeople']);
 
 Route::get('/complex_query', [FileManipulationController::class, 'complex_query']);
 
